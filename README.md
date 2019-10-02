@@ -1,6 +1,6 @@
-# MVVM
+# 数据双向绑定
 手写一个简单的vue实现双向数据绑定
-### 手写一个简单的vue实现mvvm
+### 手写一个简单的vue实现双向数据绑定
 **1. 准备两个文件index.html和mvvm.js**
 index.html内容如下：
 
