@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div v-html="message"></div>
+        <input type="text" v-model="person.name">
+        {{person.name}}
+        <div>
+            <span>{{person.name}}</span>
+        </div>
+        <div>{{person.age}}{{person.name}}</div>
+        <div>就是这么任性</div>
+        <!-- 如果数据不变化 视图就不会刷新 -->
+        {{getNewName}}
+        <!-- 我们在内部会匹配{{}} -->
+        <button v-on:click="change">更新操作</button>
+    </div>
+</body>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+<script src="MVVM.js"></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            person: {
+                name:'yujinhong',
+                age: 10
+            },
+            message: "<h1>个人信息</h1>"
+        },
+        methods: {
+            change() {
+                this.person.name = "红浴巾"
+            }
+        },
+        computed:{
+            getNewName() {
+                return this.person.name + 'MM';
+            }
+        }
+    })
+</script>
+</html>
